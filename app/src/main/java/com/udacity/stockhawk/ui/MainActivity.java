@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
+import com.udacity.stockhawk.data.StockHistory;
 import com.udacity.stockhawk.sync.QuoteSyncJob;
 
 import butterknife.BindView;
@@ -30,8 +31,7 @@ import butterknife.ButterKnife;
 import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>,
-        SwipeRefreshLayout.OnRefreshListener,
-        StockAdapter.StockAdapterOnClickHandler {
+        SwipeRefreshLayout.OnRefreshListener, StockAdapter.StockAdapterOnClickHandler {
 
     private static final int STOCK_LOADER = 0;
     @BindView(R.id.recycler_view)
@@ -45,8 +45,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private StockAdapter adapter;
 
     @Override
-    public void onClick(String symbol) {
-        Timber.d("Symbol clicked: %s", symbol);
+    public void onStockClicked(String symbol, String history) {
+        StockHistory stockHistory = new StockHistory(symbol, history);
+        startActivity(StockHistoryActivity.newIntent(this, stockHistory));
     }
 
     @Override
@@ -187,4 +188,5 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
