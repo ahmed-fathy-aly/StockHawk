@@ -41,7 +41,9 @@ public class StockHistoryActivity extends AppCompatActivity {
     private StockHistory mStockHistory;
 
     public static Intent newIntent(Context context, StockHistory stockHistory) {
-        Intent intent = new Intent(context, StockHistoryActivity.class);
+        Intent intent = new Intent();
+        if (context != null)
+            intent.setClass(context, StockHistoryActivity.class);
         intent.putExtra(EXTRA_HISTORY, stockHistory);
         return intent;
     }
