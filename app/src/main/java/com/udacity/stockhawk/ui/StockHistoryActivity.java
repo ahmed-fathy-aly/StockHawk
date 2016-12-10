@@ -51,7 +51,7 @@ public class StockHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stock);
+        setContentView(R.layout.activity_stock_history);
         ButterKnife.bind(this);
 
         // read the data from the intent
