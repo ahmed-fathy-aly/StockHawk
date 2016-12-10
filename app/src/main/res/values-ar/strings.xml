@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Stock Eagle</string>
+
+    <string name="app_name">نسر الاسهم</string>
+
+    <!-- main activity -->
+    <string name="action_change_units">تغيير الوحدة</string>
+    <string name="add_new_stock">أضف سهم جديد</string>
+
+    <string name="dialog_title">أضف سهم جديد</string>
+    <string name="dialog_hint">الرمز (مثل GOOG)</string>
+    <string name="dialog_cancel">إلغاء</string>
+    <string name="dialog_add">إضافة</string>
+
+    <string name="error_stock_not_found">الرمز s% لايصلح</string>
+    <string name="error_no_network">لا يوجد شبكة</string>
+    <string name="error_no_stocks">أضف أسهم جديدة</string>
+    <string name="toast_stock_added_no_connectivity">تم إضافة الرمز %s، سيتم التجديد عندما يتم الاتصال بالشبكة </string>
+    <string name="toast_no_connectivity">سيتم التجديد عندما يتم الاتصال بالشبكة</string>
+
+    <!-- stock history activity -->
+    <string name="no_history_found">لا توجد معلومات</string>
+
 </resources>
