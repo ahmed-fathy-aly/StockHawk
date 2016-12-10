@@ -1,9 +1,8 @@
 package com.udacity.stockhawk.data;
 
-import com.udacity.stockhawk.data.Contract;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.Locale;
 
 /**
@@ -13,7 +12,8 @@ import java.util.Locale;
 public class FormatUtils {
 
     public static String formatPrice(double price){
-        DecimalFormat dollarFormat = (DecimalFormat) NumberFormat.getCurrencyInstance(Locale.US);
+        DecimalFormat dollarFormat = (DecimalFormat) NumberFormat.getCurrencyInstance(Locale.getDefault());
+        dollarFormat.setCurrency(Currency.getInstance(Locale.US));
         return dollarFormat.format(price);
     }
 
@@ -27,8 +27,8 @@ public class FormatUtils {
     }
 
     public static String formatChangeAmout(double change){
-        DecimalFormat dollarFormatWithPlus = (DecimalFormat) NumberFormat.getCurrencyInstance(Locale.US);
-        dollarFormatWithPlus.setPositivePrefix("+$");
+        DecimalFormat dollarFormatWithPlus = (DecimalFormat) NumberFormat.getCurrencyInstance(Locale.getDefault());
+        dollarFormatWithPlus.setPositivePrefix("+");
         return dollarFormatWithPlus.format(change);
     }
 }
